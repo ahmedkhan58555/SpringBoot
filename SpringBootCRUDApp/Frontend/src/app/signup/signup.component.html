@@ -1,0 +1,25 @@
+<div class="container-signup">
+    <h2>Signup</h2>
+    <form (ngSubmit)="onSignup()">
+      <div class="form-group py-2">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="signupData.emailId" name="email" required />
+      </div>
+      <div class="form-group py-2">
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="signupData.password" name="password" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Signup</button>
+    </form>
+    <!-- Display success message -->
+<div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+  
+  <!-- Display error message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  </div>
+  
+

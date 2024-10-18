@@ -1,0 +1,36 @@
+<div class="update-user-form-container">
+    <div class="update-user-form-row">
+      <div class="update-user-form-col mt-4">
+        <h3 class="update-user-form-heading">Update User</h3>
+        <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+          <div class="update-user-form-group py-2">
+            <label for="emailId" class="update-user-label">Email ID</label>
+            <input
+              type="text"
+              class="update-user-input"
+              formControlName="emailId"
+              placeholder="Enter Email ID"
+            />
+          </div>
+  
+          <div class="update-user-form-group py-2">
+            <label for="password" class="update-user-label">Password</label>
+            <input
+              type="text"
+              class="update-user-input"
+              formControlName="password"
+              placeholder="Enter Password"
+            />
+          </div>
+  
+          <button
+            class="update-user-submit-btn py-2"
+            type="submit"
+            [disabled]="userForm.invalid">
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

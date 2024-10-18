@@ -1,0 +1,47 @@
+<div class="d-flex flex-column align-items-center">
+  <h3 class="my-4">Employee Details</h3>
+  <div class="card shadow-lg" style="width: 400px; border-radius: 10px; background-color: #f8f9fa;">
+    <div class="card-body p-4">
+      <div class="mb-3">
+        <label class="text-secondary"><b>First Name:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.firstName }}</span>
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary"><b>Last Name:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.lastName }}</span>
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary"><b>Gender:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.gender }}</span>
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary"><b>Age:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.age }}</span>
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary"><b>Date Joined:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.doj }}</span>
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary"><b>Designation:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.designation }}</span>
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary"><b>Department Name:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.department?.departmentName }}</span>
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary"><b>City:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.location?.city }}</span>
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary"><b>Country:</b></label>
+        <span class="text-dark" style="margin-left: 10px; font-weight: 500">{{ employee?.location?.country }}</span>
+      </div>
+    </div>
+  </div>
+  
+  <button (click)="downloadPDF()" class="btn btn-primary mt-4" style="padding: 10px 20px; border-radius: 25px;">
+    <i class="fas fa-download" style="margin-right: 8px;"></i>Download PDF
+  </button>
+</div>

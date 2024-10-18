@@ -1,0 +1,94 @@
+<div class="update-employee-form-container">
+  <div class="update-employee-form-row">
+    <div class="update-employee-form-col mt-4">
+      <h3 class="update-employee-form-heading">Update Employee</h3>
+      <form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+        <div class="update-employee-form-group py-2">
+          <label for="firstName" class="update-employee-label">First Name</label>
+          <input
+            type="text"
+            class="update-employee-input"
+            formControlName="firstName"
+            placeholder="Enter first name"
+          />
+        </div>
+        <div class="update-employee-form-group py-2">
+          <label for="lastName" class="update-employee-label">Last Name</label>
+          <input
+            type="text"
+            class="update-employee-input"
+            formControlName="lastName"
+            placeholder="Enter last name"
+          />
+        </div>
+
+        <div class="update-employee-form-group py-2">
+          <label for="gender" class="update-employee-label">Gender</label>
+          <input
+            type="text"
+            class="update-employee-input"
+            formControlName="gender"
+            placeholder="Enter Gender"
+          />
+        </div>
+
+        <div class="update-employee-form-group py-2">
+          <label for="age" class="update-employee-label">Age</label>
+          <input
+            type="number"
+            class="update-employee-input"
+            formControlName="age"
+            placeholder="Enter Age"
+          />
+        </div>
+
+        <div class="update-employee-form-group py-2">
+          <label for="doj" class="update-employee-label">Date Joined</label>
+          <input
+            type="date"
+            class="update-employee-input"
+            formControlName="doj"
+            placeholder="Enter Date"
+          />
+        </div>
+
+        <div class="update-employee-form-group py-2">
+          <label for="designation" class="update-employee-label">Designation</label>
+          <input
+            type="text"
+            class="update-employee-input"
+            formControlName="designation"
+            placeholder="Enter Designation"
+          />
+        </div>
+
+        <div class="update-employee-form-group py-2">
+          <label for="departmentId" class="update-employee-label">Department</label>
+          <select class="update-employee-select" formControlName="departmentId" required>
+            <option value="" disabled selected>Select Department</option>
+            <option *ngFor="let department of departments" [value]="department.id">
+              {{ department.departmentName }}
+            </option>
+          </select>
+        </div>
+
+        <div class="update-employee-form-group py-2">
+          <label for="locationId" class="update-employee-label">Location</label>
+          <select class="update-employee-select" formControlName="locationId" required>
+            <option value="" disabled selected>Select Location</option>
+            <option *ngFor="let location of locations" [value]="location.id">
+              {{ location.city }}, {{ location.country }}
+            </option>
+          </select>
+        </div>
+
+        <button
+          class="update-employee-submit-btn py-2"
+          type="submit"
+          [disabled]="employeeForm.invalid">
+          Update
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

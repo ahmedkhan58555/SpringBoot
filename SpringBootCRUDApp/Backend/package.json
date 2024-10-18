@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular/forms": "^18.2.8",
+    "@angular/router": "^18.2.8"
+  }
+}

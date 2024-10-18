@@ -1,0 +1,55 @@
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<div class="container mt-5">
+  <!-- User List Table -->
+  <h2 class="text-center my-4">User List</h2>
+
+  <!--search bar-->
+  <div class="search-container" style="display:flex; justify-content: center; margin-bottom: 20px;">
+    <input type="text" class="form-control" placeholder="Search by Email..." 
+    [(ngModel)]="searchTerm"  
+    (ngModelChange)="filterUsers()"/>
+    <!-- <button (click)="onSearch()" class="btn btn-search" style="margin-left: 10px;">Search</button> -->
+  </div>
+
+  <table class="table table-hover table-bordered shadow-sm user-table">
+    <thead>
+      <tr>
+        <th>Sr no.</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop for displaying user data -->
+      <tr *ngFor="let user of filteredUsers">
+        <td>{{ user.id || 'N/A' }}</td>
+        <td>{{ user.emailId || 'N/A' }}</td>
+        <td>{{ user.password || 'N/A' }}</td>
+        <td>
+          <!-- Buttons for employee actions -->
+
+          <button (click)="createUser()" class="btn btn-add"style="margin-left: 4px; padding: 4px 22px;">
+            Add
+          </button>
+          <button (click)="updateUser(user.id)" class="btn btn-update"style="margin-left: 4px; padding: 4px 10px;">
+            Update
+          </button>
+          <button (click)="deleteUser(user.id)" class="btn btn-delete" style="margin-left: 4px">
+          Delete
+        </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  <!-- redirect  Button -->
+  <div class="text-right mt-4" style="margin-bottom: 70px;">
+    <button (click)="redirect()" class="btn btn-logout" style="border-radius: 25px;">
+      <i class="fas fa-arrow-right" style="margin-right: 8px;"></i>
+      Dashboard
+  </button>
+  </div>
+

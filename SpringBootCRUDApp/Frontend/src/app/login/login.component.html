@@ -1,0 +1,25 @@
+<div *ngIf="showAlert" class="alert" [ngClass]="{'alert-success': alertMessage === 'You have successfully logged in!', 'alert-danger': alertMessage === 'Login failed. Please try again.'}" role="alert">
+  <h4 class="alert-heading">{{ alertMessage }}</h4>
+  <p *ngIf="alertMessage === 'You have successfully logged in!'">You can now access your dashboard.</p>
+</div>
+
+
+<div class="container-login">
+    <h2>Login</h2>
+    <form (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="loginData.emailId" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="loginData.password" name="password" required />
+      </div>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      
+      <!-- Signup Button -->
+      <button type="button" class="btn btn-primary" (click)="navigateToSignup()">Sign Up</button>
+    </form>
+  </div>
+  
