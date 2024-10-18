@@ -348,3 +348,4 @@ Feel free to reach out through GitHub for any inquiries or feedback!
 
 ## Future Enhancements
 I am planning to integrate additional features such as user roles and permissions, as well as advanced reporting functionalities. You are welcome to contribute to the project and be a part of it!
+![Spring Boot Logo](https://spring.io/images/spring-boot-128x128.png)
